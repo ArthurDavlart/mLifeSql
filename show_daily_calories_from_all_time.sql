@@ -5,4 +5,5 @@ FROM food_diary as f
 JOIN products as p ON f.product_id = p.id
 GROUP BY f.recording_timestamp
 ORDER BY f.recording_timestamp) as t
-GROUP BY t.recording_timestamp :: date;
+GROUP BY t.recording_timestamp :: date
+ORDER BY t.recording_timestamp :: date;
