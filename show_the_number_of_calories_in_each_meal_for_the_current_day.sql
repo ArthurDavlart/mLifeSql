@@ -8,5 +8,5 @@ SELECT f.recording_timestamp, SUM(0.01 * f.amount * p.kcal)
 FROM food_diary as f
 JOIN products as p ON f.product_id = p.id
 WHERE f.recording_timestamp BETWEEN 'today':: DATE and 'tomorrow':: DATE
-GROUP BY f.recording_timestamp 
-ORDER BY f.recording_timestamp;
+GROUP BY 1 
+ORDER BY 1;

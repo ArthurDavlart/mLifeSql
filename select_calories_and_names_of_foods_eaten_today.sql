@@ -14,4 +14,4 @@ SELECT f.id, f.recording_timestamp, p.name, f.amount, (0.01 * f.amount * p.kcal)
 FROM food_diary AS f
 JOIN products AS p ON p.id = f.product_id
 WHERE f.recording_timestamp BETWEEN 'today':: DATE and 'tomorrow':: DATE
-ORDER BY f.recording_timestamp, id;   
+ORDER BY 1, 2;   
