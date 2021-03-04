@@ -8,7 +8,7 @@ CREATE TABLE db_info(
 	UNIQUE (major, minor, patch)
 );
 
-INSERT INTO db_info(major, minor, patch) VALUES(1, 0, 0);
+INSERT INTO db_info(major, minor, patch) VALUES(1, 0, 1);
 
 CREATE TABLE products (
 	id SMALLSERIAL PRIMARY KEY,
@@ -37,7 +37,7 @@ CREATE TABLE specific_cases(
 CREATE TABLE case_diary(
 	id SMALLSERIAL PRIMARY KEY,
 	recording_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
-	elapsed_time_in_hours SMALLINT NOT NULL CONSTRAINT positive_number_check (elapsed_time_in_hours > 0),
+	elapsed_time_in_hours REAL NOT NULL CONSTRAINT positive_number_check (elapsed_time_in_hours > 0),
 	specific_case_id SMALLINT REFERENCES specific_cases(id) NOT NULL,
 	description JSONB NOT NULL DEFAULT '{}'
 );
